@@ -1,0 +1,210 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(0, 0, 36);
+}
+.navigation
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuToggle
+{
+    position: absolute;
+    left: -430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 500px;
+    background-image: url(img/1.PNG);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 1s;
+}
+.menuToggle::before
+{
+    content: '';
+    position: absolute;
+    transition: 1.5;
+}
+.menuToggle.active::before
+{
+    transform: rotate(225deg);
+}
+.menu
+{
+    position: absolute;
+    left: -350px;
+    width: 30px;
+    height: 30px;
+    background: url(img/3.PNG);
+    background-size: 100% 100%;
+    border-radius: 70px;
+    z-index: -1;
+    transition: transform 1s, width 1s, height 1s;
+    transition-delay: 1.5s, 1s, 1s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.menuToggle.active
+{
+    opacity:0;
+}
+.menuToggle.active ~ .menu
+{
+    width: 350px;
+    height: 600px;
+    z-index: 1;
+    transition-delay: 0s, 0.5s, 0.5s;
+}
+.menu::before
+{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: rgba(0, 0, 0, 0);
+    left: calc(50% - 8px);
+    bottom: 4px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    transition: 0.5s;
+}
+.menuToggle.active ~ .menu::before
+{
+    transition-delay: 0.5s;
+    bottom: -6px;
+}
+.menu ul 
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.menu ul li
+{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: rgb(9, 255, 0);
+    border-radius: 50%;
+    transform: translateY(-30px);
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: calc(0s + var(--i));
+}
+.menuToggle.active ~ .menu ul li
+{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    transition-delay: calc(0.75s + var(--i));
+
+}
+.menu ul li a
+{
+    display: block;
+    font-size: 2em;
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(116, 2, 136);
+}
+.menu ul li:hover a
+{
+    color: rgb(3, 255, 7);
+}
+.prueba
+{
+    position: absolute;
+    right: -930px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 500px;
+    background-image: url(img/1.png);
+    background-size: 100% 100%;
+    cursor: pointer;
+    clip-path: polygon(31% 100%, 63% 100%, 73% 93%, 63% 88%, 62% 32%, 55% 23%, 60% 17%, 48% 5%, 35% 3%, 29% 7%, 30% 71%, 20% 75%, 20% 95%, 26% 97%);    animation: animate 5s linear infinite;
+    animation: animate 15s linear;
+    transition: 15s;
+    border-radius: 50%;
+}
+@keyframes animate 
+{
+    0%
+    {
+        clip-path: polygon(45% 97%, 45% 94%, 36% 90%, 35% 77%, 40% 73%, 37% 28%, 30% 25%, 31% 8%, 35% 6%, 39% 2%, 62% 3%, 68% 5%, 65% 9%, 65% 91%, 71% 94%, 66% 98%);
+        background-image: url(img/a.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);    
+    } 
+    15%
+    {
+        clip-path: polygon(55% 98%, 36% 94%, 36% 66%, 28% 63%, 26% 40%, 33% 36%, 32% 7%, 50% 2%, 62% 6%, 65% 92%);
+        background-image: url(img/b.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        transition: cubic-bezier(0.19, 1, 0.22, 1);
+    }  
+    35%
+    {
+        clip-path: polygon(36% 84%, 27% 91%, 35% 98%, 75% 98%, 82% 91%, 69% 84%, 69% 13%, 58% 3%, 49% 2%, 42% 4%, 35% 14%);
+        background-image: url(img/c.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        transition: cubic-bezier(0.19, 1, 0.22, 1);
+    }  
+    50%
+    {
+        clip-path: polygon(35% 93%, 55% 98%, 63% 94%, 62% 7%, 53% 3%, 33% 9%);
+        background-image: url(img/d.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        transition: cubic-bezier(0.19, 1, 0.22, 1);
+    }  
+    65%
+    {
+        clip-path: polygon(34% 99%, 66% 99%, 73% 93%, 67% 88%, 63% 13%, 69% 8%, 59% 2%, 32% 2%, 21% 8%, 30% 12%, 33% 88%, 28% 94%);
+        background-image: url(img/e.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    } 
+    80%
+    {
+        clip-path: polygon(34% 100%, 63% 100%, 69% 93%, 79% 88%, 79% 67%, 67% 61%, 64% 8%, 55% 4%, 39% 15%, 42% 54%, 28% 67%, 30% 83%, 20% 87%, 20% 97%);
+        border: 10px solid #000;
+        background-image: url(img/2.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    95%
+    {
+        opacity: 1;
+    } 
+    100%
+    {
+        opacity: 0;
+    } 
+}
