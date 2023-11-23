@@ -135,7 +135,7 @@ body
 .prueba
 {
     position: absolute;
-    right: -930px;
+    right: -50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,57 +144,60 @@ body
     background-image: url(img/1.png);
     background-size: 100% 100%;
     cursor: pointer;
-    clip-path: polygon(31% 100%, 63% 100%, 73% 93%, 63% 88%, 62% 32%, 55% 23%, 60% 17%, 48% 5%, 35% 3%, 29% 7%, 30% 71%, 20% 75%, 20% 95%, 26% 97%);    animation: animate 5s linear infinite;
-    animation: animate 15s linear;
-    transition: 15s;
+    clip-path: polygon(31% 100%, 63% 100%, 73% 93%, 63% 88%, 62% 32%, 55% 23%, 60% 17%, 48% 5%, 35% 3%, 29% 7%, 30% 71%, 20% 75%, 20% 95%, 26% 97%);    
+    animation: animate 2s; linear;
+    transition: 2s;
     border-radius: 50%;
 }
 @keyframes animate 
 {
-    0%
+    15%
     {
         clip-path: polygon(45% 97%, 45% 94%, 36% 90%, 35% 77%, 40% 73%, 37% 28%, 30% 25%, 31% 8%, 35% 6%, 39% 2%, 62% 3%, 68% 5%, 65% 9%, 65% 91%, 71% 94%, 66% 98%);
         background-image: url(img/a.jpg);
+		border: 15px solid rgba(255, 0, 0);
         background-size: 100% 100%;
         background-repeat: no-repeat;
         transition: cubic-bezier(0.075, 0.82, 0.165, 1);    
     } 
-    15%
+    30%
+	{
+        clip-path: polygon(34% 99%, 66% 99%, 73% 93%, 67% 88%, 63% 13%, 69% 8%, 59% 2%, 32% 2%, 21% 8%, 30% 12%, 33% 88%, 28% 94%);
+        background-image: url(img/e.jpeg);
+        background-size: cover;
+		border: 15px solid rgba(0, 255, 0);
+        background-repeat: no-repeat;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }  
+    45%
+    {
+        clip-path: polygon(36% 84%, 27% 91%, 35% 98%, 75% 98%, 82% 91%, 69% 84%, 69% 13%, 58% 3%, 49% 2%, 42% 4%, 35% 14%);
+        background-image: url(img/c.jpg);
+		border: 15px solid rgba(217, 0, 255);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        transition: cubic-bezier(0.19, 1, 0.22, 1);
+    }  
+    60%
+    {
+        clip-path: polygon(35% 93%, 55% 98%, 63% 94%, 62% 7%, 53% 3%, 33% 9%);
+        background-image: url(img/d.jpeg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        transition: cubic-bezier(0.19, 1, 0.22, 1);
+    }  
+    75%
     {
         clip-path: polygon(55% 98%, 36% 94%, 36% 66%, 28% 63%, 26% 40%, 33% 36%, 32% 7%, 50% 2%, 62% 6%, 65% 92%);
         background-image: url(img/b.jpg);
         background-size: 100% 100%;
         background-repeat: no-repeat;
         transition: cubic-bezier(0.19, 1, 0.22, 1);
-    }  
-    35%
-    {
-        clip-path: polygon(36% 84%, 27% 91%, 35% 98%, 75% 98%, 82% 91%, 69% 84%, 69% 13%, 58% 3%, 49% 2%, 42% 4%, 35% 14%);
-        background-image: url(img/c.jpg);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        transition: cubic-bezier(0.19, 1, 0.22, 1);
-    }  
-    50%
-    {
-        clip-path: polygon(35% 93%, 55% 98%, 63% 94%, 62% 7%, 53% 3%, 33% 9%);
-        background-image: url(img/d.jpg);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        transition: cubic-bezier(0.19, 1, 0.22, 1);
-    }  
-    65%
-    {
-        clip-path: polygon(34% 99%, 66% 99%, 73% 93%, 67% 88%, 63% 13%, 69% 8%, 59% 2%, 32% 2%, 21% 8%, 30% 12%, 33% 88%, 28% 94%);
-        background-image: url(img/e.jpg);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-    } 
-    80%
+	}
+    90%
     {
         clip-path: polygon(34% 100%, 63% 100%, 69% 93%, 79% 88%, 79% 67%, 67% 61%, 64% 8%, 55% 4%, 39% 15%, 42% 54%, 28% 67%, 30% 83%, 20% 87%, 20% 97%);
-        border: 10px solid #000;
+        border: 10px solid rgba(0, 0, 255);
         background-image: url(img/2.png);
         background-size: 100% 100%;
         background-repeat: no-repeat;
